@@ -1,0 +1,64 @@
+---
+title: "ESM262 Assignment 1"
+author: "Anna Abelman and Bobby Miyashiro"
+date: "2/23/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+Part I: Create a data frame
+
+```{r}
+#create normal distribution and make into data frame
+nsample = 100
+N = rnorm(mean = 50,sd = 10, n = nsample)
+
+growth_df <- data.frame(population = N, dN_dt = NA)
+
+#use logistic_growth function to determine the dN/dt
+growth_df$dN_dt = logistic_growth(r = 5, N, K = 100)
+
+#graph it
+ggplot(data = growth_df, aes(x = N, y = dN_dt))+
+  geom_point()+
+  theme_classic() +
+  labs(title = "Population Growth Rate Over Time In Relation to Population Size")
+```
+
+Part II: Create another data frame
+
+```{r}
+#create dataframe using sequence
+growth_df2 <- data.frame(r = seq(from = 1, to = 200), dN_dt = NA)
+
+#find dN/dt using the function we created
+growth_df2$dN_dt = logistic_growth(growth_df2$r, N = 50, K = 200)
+
+#plot it
+ggplot(data = growth_df2, aes(x = r, y = dN_dt))+
+  geom_point()+
+  theme_classic() +
+  labs(title = "Population Growth Rate Over Time In Relation to Growth Rate")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
