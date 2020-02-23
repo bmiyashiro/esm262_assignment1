@@ -39,6 +39,7 @@ ggplot(data = growth_df, aes(x = N, y = dN_dt))+
   labs(title = "Population Growth Rate Over Time In Relation to Population Size")
 ```
 
+
 **Figure 1.** Change in population over change in time in relation to population size.
 
 Our function was based off of the logistic growth equation, dN/dt = rN(1-(N/K)), which shows population change over time with a known carrying capacity. This graph shows that as population size increases, population growth rate over time also increases up until a population size of 50. After a population size of 50, the population growth rate over time decreases until it reaches the carrying capacity of 100.
@@ -58,6 +59,7 @@ ggplot(data = growth_df2, aes(x = r, y = dN_dt))+
   theme_classic() +
   labs(title = "Population Growth Rate Over Time In Relation to Growth Rate")
 ```
+
 
 **Figure 2.** Change in population over change in time in relation to growth rate.
 
