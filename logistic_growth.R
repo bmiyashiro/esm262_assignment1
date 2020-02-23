@@ -6,3 +6,4 @@ logistic_growth <- function(r, N, K) {
 }
 
 logistic_growth(r = 2, N = 0, K = 1)
+
